@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <h1>TODOS</h1>
+    <!--h1>TODOS</h1-->
     <router-view :todos="todos"></router-view>
+    <router-link to="/counter">Go to Counter</router-link>
   </div>
 </template>
 
@@ -24,6 +25,10 @@ export default {
       //todos的获取源头改为api传递的
       this.todos = response.data
       //console.log(response.data)
+    }),
+    this.axios.get('http://vue.test/api/counter').then(response =>{
+      //todos的获取源头改为api传递的
+      this.counter = response.data
     })
   },
 }

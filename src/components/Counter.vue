@@ -33,7 +33,7 @@ export default {
         this.plus_isDisabled = false
       }
       //this.$emit('parentShow',this.info)
-      this.axios.patch('http://vue.test/api/counter',{value: this.info})
+      this.axios.patch('http://apitest.hzeven.com/api/counter',{value: this.info})
     },
     plus: function() {
       this.info = this.info + 1
@@ -45,10 +45,10 @@ export default {
         this.minus_isDisabled = false
       }
       //this.$emit('parentShow',this.info)
-      this.axios.patch('http://vue.test/api/counter',{value: this.info})
+      this.axios.patch('http://apitest.hzeven.com/api/counter',{value: this.info})
     },
     fetchData () {
-      this.axios.get('http://vue.test/api/counter').then(response => {
+      this.axios.get('http://apitest.hzeven.com/api/counter').then(response => {
         this.info = response.data
         if ( this.info == 0) {
           this.isDisabled = true
